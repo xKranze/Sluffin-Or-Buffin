@@ -8,31 +8,37 @@ export const QUERY_USER = gql`
       email
       workouts {
         _id
+        workoutTitle
         workoutText
         createdAt
+        exercises
       }
     }
   }
 `;
 
-export const QUERY_THOUGHTS = gql`
+export const QUERY_WORKOUTS = gql`
   query getWorkouts {
     workouts {
       _id
+      workoutTitle
       workoutText
       workoutAuthor
       createdAt
+      exercises
     }
   }
 `;
 
-export const QUERY_SINGLE_THOUGHT = gql`
+export const QUERY_SINGLE_WORKOUT = gql`
   query getSingleWorkout($workoutId: ID!) {
     workout(workoutId: $workoutId) {
       _id
+      workoutTitle
       workoutText
       workoutAuthor
       createdAt
+      exercises
       comments {
         _id
         commentText
@@ -51,9 +57,11 @@ export const QUERY_ME = gql`
       email
       workouts {
         _id
+        workoutTitle
         workoutText
         workoutAuthor
         createdAt
+        exercises
       }
     }
   }

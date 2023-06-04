@@ -10,10 +10,12 @@ const typeDefs = gql`
   }
 
   type Workout {
-    _id: ID
+    _id: ID,
+    workoutTitle: String,
     workoutText: String
     workoutAuthor: String
     createdAt: String
+    exercises: [String!]!
     comments: [Comment]!
   }
 

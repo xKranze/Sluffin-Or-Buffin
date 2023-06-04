@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
-import { ADD_THOUGHT } from '../../utils/mutations';
-import { QUERY_THOUGHTS, QUERY_ME } from '../../utils/queries';
+import { ADD_WORKOUT } from '../../utils/mutations';
+import { QUERY_WORKOUTS, QUERY_ME } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
 
@@ -12,13 +12,13 @@ const WorkoutForm = () => {
 
   const [characterCount, setCharacterCount] = useState(0);
 
-  const [addWorkout, { error }] = useMutation(ADD_THOUGHT, {
+  const [addWorkout, { error }] = useMutation(ADD_WORKOUT, {
     update(cache, { data: { addWorkout } }) {
       try {
-        const { workouts } = cache.readQuery({ query: QUERY_THOUGHTS });
+        const { workouts } = cache.readQuery({ query: QUERY_WORKOUTS });
 
         cache.writeQuery({
-          query: QUERY_THOUGHTS,
+          query: QUERY_WORKOUTS,
           data: { workouts: [addWorkout, ...workouts] },
         });
       } catch (e) {

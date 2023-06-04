@@ -23,15 +23,16 @@ const WorkoutList = ({
                   className="text-light"
                   to={`/profiles/${workout.workoutAuthor}`}
                 >
-                  {workout.workoutAuthor} <br />
+                  {workout.workoutTitle} <br />
                   <span style={{ fontSize: '1rem' }}>
-                    had this workout on {workout.createdAt}
+                    by {workout.workoutAuthor} on {workout.createdAt}
                   </span>
                 </Link>
               ) : (
                 <>
+                  {workout.workoutTitle} <br />
                   <span style={{ fontSize: '1rem' }}>
-                    You had this workout on {workout.createdAt}
+                    on {workout.createdAt}
                   </span>
                 </>
               )}

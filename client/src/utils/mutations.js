@@ -24,13 +24,15 @@ export const ADD_USER = gql`
   }
 `;
 
-export const ADD_THOUGHT = gql`
+export const ADD_WORKOUT = gql`
   mutation addWorkout($workoutText: String!) {
     addWorkout(workoutText: $workoutText) {
       _id
+      workoutTitle
       workoutText
       workoutAuthor
       createdAt
+      exercises
       comments {
         _id
         commentText
@@ -43,9 +45,11 @@ export const ADD_COMMENT = gql`
   mutation addComment($workoutId: ID!, $commentText: String!) {
     addComment(workoutId: $workoutId, commentText: $commentText) {
       _id
+      workoutTitle
       workoutText
       workoutAuthor
       createdAt
+      exercises
       comments {
         _id
         commentText

@@ -41,7 +41,7 @@ const CommentForm = ({ workoutId }) => {
 
   return (
     <div>
-      <h4>What are your workouts on this workout?</h4>
+      <h4>What are your comments on this workout?</h4>
 
       {Auth.loggedIn() ? (
         <>

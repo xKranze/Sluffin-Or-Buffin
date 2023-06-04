@@ -4,10 +4,10 @@ import { useQuery } from '@apollo/client';
 import WorkoutList from '../components/WorkoutList';
 import WorkoutForm from '../components/WorkoutForm';
 
-import { QUERY_THOUGHTS } from '../utils/queries';
+import { QUERY_WORKOUTS } from '../utils/queries';
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_THOUGHTS);
+  const { loading, data } = useQuery(QUERY_WORKOUTS);
   const workouts = data?.workouts || [];
 
   return (

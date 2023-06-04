@@ -26,14 +26,9 @@ const workoutSchema = new Schema({
     default: Date.now,
     get: (timestamp) => dateFormat(timestamp),
   },
-  exercise: [
-    {
-      details: {
-        type: String,
-        maxlength: 280
-      }
-    }
-  ],
+  exercises: {
+    type: [String]
+  },
   comments: [
     {
       commentText: {

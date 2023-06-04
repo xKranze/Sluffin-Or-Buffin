@@ -7,13 +7,14 @@ import { useQuery } from '@apollo/client';
 import CommentList from '../components/CommentList';
 import CommentForm from '../components/CommentForm';
 
-import { QUERY_SINGLE_THOUGHT } from '../utils/queries';
+import { QUERY_SINGLE_WORKOUT } from '../utils/queries';
+import ExerciseList from '../components/ExerciseList';
 
 const SingleWorkout = () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
   const { workoutId } = useParams();
 
-  const { loading, data } = useQuery(QUERY_SINGLE_THOUGHT, {
+  const { loading, data } = useQuery(QUERY_SINGLE_WORKOUT, {
     // pass URL parameter
     variables: { workoutId: workoutId },
   });
@@ -26,9 +27,9 @@ const SingleWorkout = () => {
   return (
     <div className="my-3">
       <h3 className="card-header bg-dark text-light p-2 m-0">
-        {workout.workoutAuthor} <br />
+        {workout.workoutTitle} <br />
         <span style={{ fontSize: '1rem' }}>
-          had this workout on {workout.createdAt}
+          by {workout.workoutAuthor} on {workout.createdAt}
         </span>
       </h3>
       <div className="bg-light py-4">
@@ -43,6 +44,9 @@ const SingleWorkout = () => {
         >
           {workout.workoutText}
         </blockquote>
+        <div className="my-5">
+          <ExerciseList exercises={workout.exercises} />
+        </div>
       </div>
 
       <div className="my-5">

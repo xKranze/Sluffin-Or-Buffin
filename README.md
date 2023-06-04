@@ -30,18 +30,19 @@ Please be sure to have the following installed prior to running this application
 
 https://coding-boot-camp.github.io/full-stack/nodejs/how-to-install-nodejs
 
+<hr>
+## Usage
+
+-Access application in terminal.
+
 -Run the following command in terminal:
-npm i
+
+`npm i
 
 npm run seed
 
-npm run develop
+npm run develop`
 
-<hr>
-## Usage
--Access application in terminal.
-
--type "node index.js" to start.
 
 Please view the link below to use the application:
 
@@ -53,6 +54,7 @@ Please view the link below to use the application:
 
 <hr>
 ## Credits
+
 Node.js - https://nodejs.org/en/
 
 EXPRESS - https://expressjs.com/en/starter/installing.html
@@ -74,6 +76,7 @@ https://devcenter.heroku.com/
 
 <hr>
 ## Collaborators:
+
 <a href="https://github.com/xKranze">Jimmy Yin</a> 
 
 <a href="https://github.com/bg2398">Brandon Guerrero</a> 

@@ -1,0 +1,222 @@
+[
+  {
+    "workoutTitle": "Arm Day",
+    "workoutText": "Maximum focus on using arm and shoulder muscles. Take at least 2 hours.",
+    "workoutAuthor": "Jimmy Yin",
+    "exercise": [
+      {
+        "details": "Curls, 20 lbs, 5 sets of 15, take 1 min break"
+      },
+      {
+        "details": "Bench Press, 120 lbs, 5 sets of 15, take 1 min break"
+      },
+      {
+        "details": "Pushups, 5 sets of 15, take 1 min break"
+      },
+      {
+        "details": "Pullups, 5 sets of 15, take 1 min break"
+      },
+      {
+        "details": "Tricep Dips, 5 sets of 15, take 1 min break"
+      }
+    ]
+  },
+  {
+    "workoutTitle": "Leg Day",
+    "workoutText": "Focus on strengthening your leg muscles. Take at least 1.5 hours.",
+    "workoutAuthor": "Paolo Alhambra",
+    "exercise": [
+      {
+        "details": "Squats, 150 lbs, 5 sets of 10, take 1 min break"
+      },
+      {
+        "details": "Lunges, bodyweight, 4 sets of 12 (each leg), take 30 sec break"
+      },
+      {
+        "details": "Leg Press, 200 lbs, 5 sets of 15, take 1 min break"
+      },
+      {
+        "details": "Calf Raises, bodyweight, 5 sets of 20, take 30 sec break"
+      },
+      {
+        "details": "Leg Extensions, 100 lbs, 4 sets of 12, take 30 sec break"
+      }
+    ]
+  },
+  {
+    "workoutTitle": "Core Workout",
+    "workoutText": "Focus on strengthening your core muscles. Take at least 1 hour.",
+    "workoutAuthor": "Brandon Guerrero",
+    "exercise": [
+      {
+        "details": "Plank, hold for 1 minute, rest for 30 seconds, repeat 5 times"
+      },
+      {
+        "details": "Russian Twists, 10 lbs, 3 sets of 20 (each side), take 30 sec break"
+      },
+      {
+        "details": "Crunches, 4 sets of 15, take 30 sec break"
+      },
+      {
+        "details": "Hanging Leg Raises, 4 sets of 12, take 1 min break"
+      },
+      {
+        "details": "Bicycle Crunches, 4 sets of 20 (each side), take 30 sec break"
+      }
+    ]
+  },
+  {
+    "workoutTitle": "Cardio Day",
+    "workoutText": "Focus on cardiovascular endurance. Take at least 1 hour.",
+    "workoutAuthor": "Isaac Park",
+    "exercise": [
+      {
+        "details": "Running, 30 minutes at a moderate pace"
+      },
+      {
+        "details": "Cycling, 45 minutes on a stationary bike"
+      },
+      {
+        "details": "Jumping Jacks, 4 sets of 25, take 30 sec break"
+      },
+      {
+        "details": "Burpees, 4 sets of 10, take 1 min break"
+      },
+      {
+        "details": "High Knees, 3 sets of 30 seconds, take 30 sec break"
+      }
+    ]
+  },
+  {
+    "workoutTitle": "Upper Body Workout",
+    "workoutText": "Focus on strengthening your upper body muscles. Take at least 1.5 hours.",
+    "workoutAuthor": "Paolo Alhambra",
+    "exercise": [
+      {
+        "details": "Dumbbell Shoulder Press, 20 lbs each, 5 sets of 12, take 1 min break"
+      },
+      {
+        "details": "Dumbbell Rows, 30 lbs each, 4 sets of 12, take 30 sec break"
+      },
+      {
+        "details": "Chest Flys, 15 lbs each, 4 sets of 15, take 30 sec break"
+      },
+      {
+        "details": "Overhead Tricep Extensions, 15 lbs, 4 sets of 12, take 30 sec break"
+      },
+      {
+        "details": "Lat Pulldowns, 80 lbs, 4 sets of 12, take 1 min break"
+      }
+    ]
+  },
+  {
+    "workoutTitle": "Full Body Circuit",
+    "workoutText": "Target multiple muscle groups with this full body circuit. Take at least 1.5 hours.",
+    "workoutAuthor": "Alan Kay",
+    "exercise": [
+      {
+        "details": "Squats, 100 lbs, 5 sets of 10, take 1 min break"
+      },
+      {
+        "details": "Pushups, 5 sets of 15, take 30 sec break"
+      },
+      {
+        "details": "Dumbbell Lunges, 15 lbs each, 4 sets of 12 (each leg), take 30 sec break"
+      },
+      {
+        "details": "Bent Over Rows, 40 lbs, 4 sets of 12, take 30 sec break"
+      },
+      {
+        "details": "Plank, hold for 1 minute, rest for 30 seconds, repeat 4 times"
+      }
+    ]
+  },
+  {
+    "workoutTitle": "Strength Training",
+    "workoutText": "Focus on building strength with heavy weights. Take at least 2 hours.",
+    "workoutAuthor": "C.A.R. Hoare",
+    "exercise": [
+      {
+        "details": "Deadlifts, 200 lbs, 5 sets of 5, take 2 min break"
+      },
+      {
+        "details": "Bench Press, 150 lbs, 5 sets of 5, take 2 min break"
+      },
+      {
+        "details": "Squats, 180 lbs, 5 sets of 5, take 2 min break"
+      },
+      {
+        "details": "Barbell Rows, 120 lbs, 5 sets of 5, take 2 min break"
+      },
+      {
+        "details": "Overhead Press, 80 lbs, 5 sets of 5, take 2 min break"
+      }
+    ]
+  },
+  {
+    "workoutTitle": "Back and Biceps",
+    "workoutText": "Focus on your back and bicep muscles. Take at least 1.5 hours.",
+    "workoutAuthor": "David Thomas",
+    "exercise": [
+      {
+        "details": "Wide Grip Pullups, 4 sets of 10, take 30 sec break"
+      },
+      {
+        "details": "Barbell Curls, 50 lbs, 5 sets of 12, take 1 min break"
+      },
+      {
+        "details": "Dumbbell Rows, 40 lbs each, 4 sets of 12, take 30 sec break"
+      },
+      {
+        "details": "Hammer Curls, 25 lbs, 4 sets of 12, take 30 sec break"
+      },
+      {
+        "details": "Lat Pulldowns, 80 lbs, 4 sets of 12, take 1 min break"
+      }
+    ]
+  },
+  {
+    "workoutTitle": "Endurance Training",
+    "workoutText": "Focus on improving endurance with high-rep exercises. Take at least 1.5 hours.",
+    "workoutAuthor": "Donald Knuth",
+    "exercise": [
+      {
+        "details": "Burpees, 4 sets of 20, take 30 sec break"
+      },
+      {
+        "details": "Mountain Climbers, 3 sets of 30 seconds, take 30 sec break"
+      },
+      {
+        "details": "Box Jumps, 4 sets of 10, take 30 sec break"
+      },
+      {
+        "details": "Russian Twists, bodyweight, 4 sets of 20 (each side), take 30 sec break"
+      },
+      {
+        "details": "Jumping Lunges, 4 sets of 15 (each leg), take 30 sec break"
+      }
+    ]
+  },
+  {
+    "workoutTitle": "Full Body HIIT",
+    "workoutText": "Engage in a high-intensity interval training (HIIT) session for a full-body workout. Take at least 1 hour.",
+    "workoutAuthor": "Lernantino",
+    "exercise": [
+      {
+        "details": "Jumping Jacks, 1 minute"
+      },
+      {
+        "details": "Squat Jumps, 4 sets of 15, take 30 sec break"
+      },
+      {
+        "details": "Pushups, 4 sets of 15, take 30 sec break"
+      },
+      {
+        "details": "Mountain Climbers, 4 sets of 20 (each leg), take 30 sec break"
+      },
+      {
+        "details": "Plank, hold for 1 minute, rest for 30 seconds, repeat 4 times"
+      }
+    ]
+  }
+]

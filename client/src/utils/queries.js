@@ -6,9 +6,9 @@ export const QUERY_USER = gql`
       _id
       username
       email
-      thoughts {
+      workouts {
         _id
-        thoughtText
+        workoutText
         createdAt
       }
     }
@@ -16,22 +16,22 @@ export const QUERY_USER = gql`
 `;
 
 export const QUERY_THOUGHTS = gql`
-  query getThoughts {
-    thoughts {
+  query getWorkouts {
+    workouts {
       _id
-      thoughtText
-      thoughtAuthor
+      workoutText
+      workoutAuthor
       createdAt
     }
   }
 `;
 
 export const QUERY_SINGLE_THOUGHT = gql`
-  query getSingleThought($thoughtId: ID!) {
-    thought(thoughtId: $thoughtId) {
+  query getSingleWorkout($workoutId: ID!) {
+    workout(workoutId: $workoutId) {
       _id
-      thoughtText
-      thoughtAuthor
+      workoutText
+      workoutAuthor
       createdAt
       comments {
         _id
@@ -49,10 +49,10 @@ export const QUERY_ME = gql`
       _id
       username
       email
-      thoughts {
+      workouts {
         _id
-        thoughtText
-        thoughtAuthor
+        workoutText
+        workoutAuthor
         createdAt
       }
     }

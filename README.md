@@ -1,5 +1,7 @@
 # Sluffin Or Buffin
+
 <hr>
+
 ## Description 
 
 -Create your workouts that suits your goal!: 
@@ -12,6 +14,7 @@
 
 -Possibility - Add your friends and compete to see whos sluffin or buffin!
 <hr>
+
 ## Table of Contents 
   
 - [Installation](#installation)
@@ -20,6 +23,7 @@
 - [Features](#features)
 - [Tests](#tests)
 <hr>
+
 ## Installation
 
 Some installation packages is needed to run this application in command-line.
@@ -31,6 +35,7 @@ Please be sure to have the following installed prior to running this application
 https://coding-boot-camp.github.io/full-stack/nodejs/how-to-install-nodejs
 
 <hr>
+
 ## Usage
 
 -Access application in terminal.
@@ -53,6 +58,7 @@ Please view the link below to use the application:
 ![alt text](./lib/passedtest.jpg)
 
 <hr>
+
 ## Credits
 
 Node.js - https://nodejs.org/en/
@@ -75,6 +81,7 @@ https://devcenter.heroku.com/
 ## Features
 
 <hr>
+
 ## Collaborators:
 
 <a href="https://github.com/xKranze">Jimmy Yin</a> 

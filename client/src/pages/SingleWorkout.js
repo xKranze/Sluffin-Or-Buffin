@@ -1,29 +1,76 @@
-import React from 'react';
-
-// Import the `useParams()` hook
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-
 import CommentList from '../components/CommentList';
 import CommentForm from '../components/CommentForm';
-
 import { QUERY_SINGLE_WORKOUT } from '../utils/queries';
 import ExerciseList from '../components/ExerciseList';
 
 const SingleWorkout = () => {
-  // Use `useParams()` to retrieve value of the route parameter `:profileId`
   const { workoutId } = useParams();
-
   const { loading, data } = useQuery(QUERY_SINGLE_WORKOUT, {
-    // pass URL parameter
     variables: { workoutId: workoutId },
   });
 
   const workout = data?.workout || {};
 
+  const [timerDuration, setTimerDuration] = useState(0);
+  const [isTimerRunning, setIsTimerRunning] = useState(false);
+  const [isTimerPaused, setIsTimerPaused] = useState(false);
+  const [stopClicked, setStopClicked] = useState(false);
+  const [prevTimerDuration, setPrevTimerDuration] = useState(0);
+
+  useEffect(() => {
+    let interval;
+    if (isTimerRunning && !isTimerPaused) {
+      interval = setInterval(() => {
+        setTimerDuration((prevDuration) => prevDuration + 1);
+      }, 1000);
+    }
+    return () => {
+      clearInterval(interval);
+    };
+  }, [isTimerRunning, isTimerPaused]);
+
+  const startTimer = () => {
+    if (isTimerRunning || stopClicked) {
+      setTimerDuration(0);
+      setPrevTimerDuration(0);
+      setStopClicked(false);
+    }
+    setIsTimerRunning(true);
+    setIsTimerPaused(false);
+  };
+
+  const stopTimer = () => {
+    if (stopClicked) {
+      setIsTimerRunning(false);
+      setTimerDuration(0);
+      setPrevTimerDuration(0);
+      setStopClicked(false);
+      setIsTimerPaused(false);
+    } else {
+      setIsTimerRunning(false);
+      setPrevTimerDuration(timerDuration);
+      setStopClicked(true);
+      setIsTimerPaused(false);
+    }
+  };
+
+  const pauseTimer = () => {
+    setIsTimerPaused(!isTimerPaused);
+  };
+
+  const formatTime = (time) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = time % 60;
+    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  };
+
   if (loading) {
     return <div>Loading...</div>;
   }
+
   return (
     <div className="my-3">
       <h3 className="card-header bg-dark text-light p-2 m-0">
@@ -44,6 +91,12 @@ const SingleWorkout = () => {
         >
           {workout.workoutText}
         </blockquote>
+        <h3 className="p-5 display-inline-block" style={{ borderBottom: '1px dotted #1a1a1a' }}>
+          Status:  {formatTime(stopClicked ? prevTimerDuration : timerDuration)}  <p> </p>
+          <button onClick={startTimer}> Start </button> 
+          <button onClick={stopTimer}> Stop </button> 
+          <button onClick={pauseTimer}> {isTimerPaused ? 'Resume' : 'Pause'} </button>
+        </h3>
         <div className="my-5">
           <ExerciseList exercises={workout.exercises} />
         </div>

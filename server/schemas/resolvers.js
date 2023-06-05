@@ -23,6 +23,12 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
+    my: async (parent, args, context) => {
+      if (context.user) {
+        return User.findOne({ _id: context.user._id }).populate('workouts');
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
   },
 
   Mutation: {

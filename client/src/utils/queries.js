@@ -66,3 +66,21 @@ export const QUERY_ME = gql`
     }
   }
 `;
+
+export const QUERY_MY = gql`
+  query my {
+    my {
+      _id
+      username
+      email
+      workouts {
+        _id
+        workoutTitle
+        workoutText
+        workoutAuthor
+        createdAt
+        exercises
+      }
+    }
+  }
+`;

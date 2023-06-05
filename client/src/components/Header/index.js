@@ -13,13 +13,16 @@ const Header = () => {
       <div className="container flex-row justify-space-between-lg justify-center align-center">
         <div>
           <Link className="text-light" to="/">
-            <h1 className="m-0">Tech Workouts</h1>
+            <h1 className="m-0">Sluffin or Buffin</h1>
           </Link>
-          <p className="m-0">Get into the mind of a programmer.</p>
+          <p className="m-0">Stop Sluffin and get Buffin</p>
         </div>
         <div>
           {Auth.loggedIn() ? (
             <>
+              <Link className="btn btn-lg btn-info m-2" to="/my">
+                {Auth.getProfile().data.username}'s workouts
+              </Link>
               <Link className="btn btn-lg btn-info m-2" to="/me">
                 {Auth.getProfile().data.username}'s profile
               </Link>

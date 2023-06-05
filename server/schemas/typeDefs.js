@@ -37,6 +37,7 @@ const typeDefs = gql`
     workouts(username: String): [Workout]
     workout(workoutId: ID!): Workout
     me: User
+    my: User
   }
 
   type Mutation {

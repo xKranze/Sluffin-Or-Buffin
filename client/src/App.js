@@ -13,6 +13,7 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import SingleWorkout from './pages/SingleWorkout';
 import Profile from './pages/Profile';
+import ProfileWorkout from './pages/ProfileWorkout';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -63,6 +64,10 @@ function App() {
               <Route 
                 path="/me" 
                 element={<Profile />}
+              />
+              <Route 
+                path="/my" 
+                element={<ProfileWorkout />}
               />
               <Route 
                 path="/profiles/:username" 

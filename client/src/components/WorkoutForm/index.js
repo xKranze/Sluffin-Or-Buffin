@@ -9,14 +9,13 @@ import Auth from '../../utils/auth';
 
 const WorkoutForm = () => {
   const [workoutText, setWorkoutText] = useState('');
-
-  const [characterCount, setCharacterCount] = useState(0);
+  const [workoutTitle, setWorkoutTitle] = useState('');
+  const [exercises, setExercises] = useState([]);
 
   const [addWorkout, { error }] = useMutation(ADD_WORKOUT, {
     update(cache, { data: { addWorkout } }) {
       try {
         const { workouts } = cache.readQuery({ query: QUERY_WORKOUTS });
-
         cache.writeQuery({
           query: QUERY_WORKOUTS,
           data: { workouts: [addWorkout, ...workouts] },
@@ -25,7 +24,6 @@ const WorkoutForm = () => {
         console.error(e);
       }
 
-      // update me object's cache
       const { me } = cache.readQuery({ query: QUERY_ME });
       cache.writeQuery({
         query: QUERY_ME,
@@ -36,63 +34,114 @@ const WorkoutForm = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
+console.log(workoutTitle)
+console.log(workoutText)
+console.log(exercises)
     try {
-      const { data } = await addWorkout({
+      await addWorkout({
         variables: {
+          workoutTitle,
           workoutText,
-          workoutAuthor: Auth.getProfile().data.username,
+          exercises,
         },
       });
 
       setWorkoutText('');
+      setWorkoutTitle('');
+      setExercises([]);
     } catch (err) {
       console.error(err);
     }
   };
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
 
-    if (name === 'workoutText' && value.length <= 280) {
-      setWorkoutText(value);
-      setCharacterCount(value.length);
-    }
+  const handleExerciseChange = (index, event) => {
+    const updatedExercises = [...exercises];
+    updatedExercises[index] = event.target.value;
+    setExercises(updatedExercises);
+  };
+
+  const handleAddExercise = () => {
+    setExercises([...exercises, '']);
+  };
+
+  const handleRemoveExercise = (index) => {
+    const updatedExercises = [...exercises];
+    updatedExercises.splice(index, 1);
+    setExercises(updatedExercises);
   };
 
   return (
     <div>
-      <h3>What's on your techy mind?</h3>
+      <h3>Start a new workout routine!</h3>
+      <br />
 
       {Auth.loggedIn() ? (
         <>
-          <p
-            className={`m-0 ${
-              characterCount === 280 || error ? 'text-danger' : ''
-            }`}
-          >
-            Character Count: {characterCount}/280
-          </p>
           <form
             className="flex-row justify-center justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
           >
+            <div className="col-12 col-lg-3">
+              <h5>Title:</h5>
+              <br />
+              <h5>Description:</h5>
+            </div>
+
             <div className="col-12 col-lg-9">
+              <input
+                name="workoutTitle"
+                type="text"
+                placeholder="Name your workout routine"
+                value={workoutTitle}
+                className="form-input w-100"
+                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                onChange={(event) => setWorkoutTitle(event.target.value)}
+              />
+
               <textarea
                 name="workoutText"
-                placeholder="Here's a new workout..."
+                placeholder="Workout description"
                 value={workoutText}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
-                onChange={handleChange}
+                onChange={(event) => setWorkoutText(event.target.value)}
               ></textarea>
             </div>
 
-            <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
-                Add Workout
+            <br />
+            <br />
+
+            <div className="col-12 col-lg-12">
+              <h3>Exercises:</h3>
+              <button className="btn btn-primary btn-block py-3" type="button" onClick={handleAddExercise}>
+                Add Exercise
               </button>
+              <hr></hr>
+              <div>
+                {exercises.map((exercise, index) => (
+                  <div key={index} style={{ display: 'flex', alignItems: 'center' }}>
+                    <input
+                      type="text"
+                      placeholder="Exercise"
+                      className="form-input w-80"
+                      value={exercise}
+                      onChange={(event) => handleExerciseChange(index, event)}
+                    />
+
+                    <button className="btn btn-primary btn-block py-3" type="button" onClick={() => handleRemoveExercise(index)} style={{ width: '20%' }}>
+                      Remove
+                    </button>
+                  </div>
+                ))}
+                <br />
+                <br />
+              </div>
             </div>
+            <button className="btn btn-primary btn-block py-3" type="submit">
+              Add Workout
+            </button>
+
             {error && (
               <div className="col-12 my-3 bg-danger text-white p-3">
                 {error.message}

@@ -25,20 +25,21 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_WORKOUT = gql`
-  mutation addWorkout($workoutText: String!) {
-    addWorkout(workoutText: $workoutText) {
+  mutation Mutation($workoutTitle: String!, $workoutText: String!) {
+  addWorkout(workoutTitle: $workoutTitle, workoutText: $workoutText) {
+    workoutTitle
+    workoutText
+    workoutAuthor
+    exercises
+    createdAt
+    comments {
       _id
-      workoutTitle
-      workoutText
-      workoutAuthor
+      commentText
+      commentAuthor
       createdAt
-      exercises
-      comments {
-        _id
-        commentText
-      }
     }
   }
+}
 `;
 
 export const ADD_COMMENT = gql`

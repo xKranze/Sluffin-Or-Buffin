@@ -39,36 +39,40 @@ const resolvers = {
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
-
+  
       if (!user) {
         throw new AuthenticationError('No user found with this email address');
       }
-
+  
       const correctPw = await user.isCorrectPassword(password);
-
+  
       if (!correctPw) {
         throw new AuthenticationError('Incorrect credentials');
       }
-
+  
       const token = signToken(user);
-
+  
       return { token, user };
     },
-    addWorkout: async (parent, { workoutText }, context) => {
-      if (context.user) {
-        const workout = await Workout.create({
-          workoutText,
-          workoutAuthor: context.user.username,
-        });
-
-        await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $addToSet: { workouts: workout._id } }
-        );
-
-        return workout;
+    addWorkout: async (parent, { workoutTitle, workoutText, exercises }, context) => {
+      if (!context.user) {
+        throw new AuthenticationError('You need to be logged in!');
       }
-      throw new AuthenticationError('You need to be logged in!');
+  
+      const workout = await Workout.create({
+        workoutTitle,
+        workoutText,
+        workoutAuthor: context.user.username,
+        exercises,
+      });
+  
+      await User.findByIdAndUpdate(
+        context.user._id,
+        { $push: { workouts: workout._id } },
+        { new: true }
+      );
+  
+      return workout;
     },
     addComment: async (parent, { workoutId, commentText }, context) => {
       if (context.user) {

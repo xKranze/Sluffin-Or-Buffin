@@ -11,7 +11,7 @@ const typeDefs = gql`
 
   type Workout {
     _id: ID,
-    workoutTitle: String,
+    workoutTitle: String
     workoutText: String
     workoutAuthor: String
     createdAt: String

@@ -50,8 +50,9 @@ console.log(exercises)
           workoutText,
           exercises,
         },
+        
       });
-
+      console.log(exercises)
       setWorkoutText('');
       setWorkoutTitle('');
       setExercises([]);

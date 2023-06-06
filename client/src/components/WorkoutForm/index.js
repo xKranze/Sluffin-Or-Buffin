@@ -24,12 +24,18 @@ const WorkoutForm = () => {
         console.error(e);
       }
 
-      const { me } = cache.readQuery({ query: QUERY_ME });
-      cache.writeQuery({
-        query: QUERY_ME,
-        data: { me: { ...me, workouts: [...me.workouts, addWorkout] } },
-      });
-    },
+      const queryResult = cache.readQuery({ query: QUERY_WORKOUTS });
+
+if (queryResult && queryResult.workouts) {
+  const { workouts } = queryResult;
+
+  cache.writeQuery({
+    query: QUERY_WORKOUTS,
+    data: { workouts: [addWorkout, ...workouts] },
+  });
+      
+
+}}
   });
 
   const handleFormSubmit = async (event) => {
@@ -62,8 +68,9 @@ console.log(exercises)
   };
 
   const handleAddExercise = () => {
-    setExercises([...exercises, '']);
+    setExercises(prevExercises => [...prevExercises, '']);
   };
+  
 
   const handleRemoveExercise = (index) => {
     const updatedExercises = [...exercises];

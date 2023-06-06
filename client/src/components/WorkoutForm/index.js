@@ -26,23 +26,24 @@ const WorkoutForm = () => {
 
       const queryResult = cache.readQuery({ query: QUERY_WORKOUTS });
 
-if (queryResult && queryResult.workouts) {
-  const { workouts } = queryResult;
+      if (queryResult && queryResult.workouts) {
+        const { workouts } = queryResult;
 
-  cache.writeQuery({
-    query: QUERY_WORKOUTS,
-    data: { workouts: [addWorkout, ...workouts] },
-  });
-      
+        cache.writeQuery({
+          query: QUERY_WORKOUTS,
+          data: { workouts: [addWorkout, ...workouts] },
+        });
 
-}}
+
+      }
+    }
   });
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-console.log(workoutTitle)
-console.log(workoutText)
-console.log(exercises)
+    console.log(workoutTitle)
+    console.log(workoutText)
+    console.log(exercises)
     try {
       await addWorkout({
         variables: {
@@ -50,12 +51,13 @@ console.log(exercises)
           workoutText,
           exercises,
         },
-        
+
       });
       console.log(exercises)
       setWorkoutText('');
       setWorkoutTitle('');
       setExercises([]);
+      window.location.reload();
     } catch (err) {
       console.error(err);
     }
@@ -71,7 +73,7 @@ console.log(exercises)
   const handleAddExercise = () => {
     setExercises(prevExercises => [...prevExercises, '']);
   };
-  
+
 
   const handleRemoveExercise = (index) => {
     const updatedExercises = [...exercises];
@@ -100,7 +102,7 @@ console.log(exercises)
               <input
                 name="workoutTitle"
                 type="text"
-                placeholder="Name your workout routine"
+                placeholder="Name your workout routine, ex. Leg Day"
                 value={workoutTitle}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
@@ -131,7 +133,7 @@ console.log(exercises)
                   <div key={index} style={{ display: 'flex', alignItems: 'center' }}>
                     <input
                       type="text"
-                      placeholder="Exercise"
+                      placeholder="ex. Pushups, 5 sets of 15, take 1 minute break"
                       className="form-input w-80"
                       value={exercise}
                       onChange={(event) => handleExerciseChange(index, event)}

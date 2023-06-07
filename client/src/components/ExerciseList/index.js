@@ -1,3 +1,5 @@
+import React from 'react';
+
 const ExerciseList = ({ exercises = [] }) => {
   if (!exercises.length) {
     console.log(exercises);
@@ -17,6 +19,7 @@ const ExerciseList = ({ exercises = [] }) => {
           <div key={index} className="col-12 mb-3 pb-3">
             <div className="p-3 bg-dark text-light">
               <p className="card-body">{exercise}</p>
+              <button>Edit</button>
             </div>
           </div>
         ))}

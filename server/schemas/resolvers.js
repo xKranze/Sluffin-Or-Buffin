@@ -91,6 +91,34 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
+
+    editWorkout: async (parent, { workoutId, workoutTitle, workoutText, exercises }, context) => {
+      if (context.user) {
+        const updatedWorkout = await Workout.findOneAndUpdate({
+          _id: workoutId,
+          workoutAuthor: context.user.username
+        },
+        {
+          $set: {
+            workoutTitle: workoutTitle || '',
+            workoutText: workoutText || '',
+            exercises: exercises || [],
+          },
+        },
+        {
+          new: true,
+          runValidators: true,
+        }
+        );
+
+        if(!updatedWorkout) {
+          throw new Error('Workout not found!');
+        }
+        return updatedWorkout;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    
     removeWorkout: async (parent, { workoutId }, context) => {
       if (context.user) {
         const workout = await Workout.findOneAndDelete({

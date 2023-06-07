@@ -71,11 +71,7 @@ const SingleWorkout = () => {
     return <div>Loading...</div>;
   }
 
-  const onExerciseEdit = (exerciseId) => {
-    // Logic for editing the exercise
-    console.log('Edit exercise with ID:', exerciseId);
-  };
-
+  
   return (
     <div className="my-3">
       <h3 className="card-header bg-dark text-light p-2 m-0">
@@ -103,7 +99,7 @@ const SingleWorkout = () => {
           <button onClick={pauseTimer}> {isTimerPaused ? 'Resume' : 'Pause'} </button>
         </h3>
         <div className="my-5">
-          <ExerciseList exercises={workout.exercises} onExerciseEdit={onExerciseEdit} />
+          <ExerciseList exercises={workout.exercises} />
           
         </div>
       </div>

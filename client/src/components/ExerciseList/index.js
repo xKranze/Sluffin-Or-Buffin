@@ -1,11 +1,26 @@
 import React from 'react';
 
 const ExerciseList = ({ exercises = [] }) => {
+  // const [exerciseText, setExerciseText] = useState(exercises);
+
+  // useEffect(() => {
+  //   setExerciseText(exercises)
+  // }, [exercises]);
+
   if (!exercises.length) {
     console.log(exercises);
     return <h3>No Exercises Yet</h3>;
   }
-
+  // const onExerciseEdit = (index) => {
+  //   const updatedText = prompt('Enter new exercise text:');
+  //   if(updatedText !== null) {
+  //     const updatedExercises = [...exercises];
+  //     updatedExercises[index] = updatedText;
+  //     // setExerciseText(updatedExercises);
+  //     console.log(updatedExercises)
+  //   }
+  //   console.log('Edit exercise with ID:', index);
+  // };
   return (
     <>
       <h3
@@ -19,7 +34,7 @@ const ExerciseList = ({ exercises = [] }) => {
           <div key={index} className="col-12 mb-3 pb-3">
             <div className="p-3 bg-dark text-light">
               <p className="card-body">{exercise}</p>
-              <button>Edit</button>
+              {/* <button onClick={() => onExerciseEdit(index)}>Edit</button> */}
             </div>
           </div>
         ))}

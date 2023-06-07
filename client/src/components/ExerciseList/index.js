@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ExerciseList = ({ exercises }) => {
+const ExerciseList = ({ exercises = [] }) => {
   // const [exerciseText, setExerciseText] = useState(exercises);
 
   // useEffect(() => {

@@ -24,6 +24,13 @@ const Home = () => {
           )}
         </div>
       </div>
+      <style>
+        {`
+          .btn.btn-danger {
+            display: none;
+          }
+        `}
+      </style>
     </main>
   );
 };

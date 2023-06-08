@@ -1,7 +1,7 @@
 {
   "name": "programming-workouts",
   "version": "1.0.0",
-  "description": "",
+  "description": "<hr>",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",

@@ -60,3 +60,13 @@ export const ADD_COMMENT = gql`
     }
   }
 `;
+
+export const REMOVE_WORKOUT = gql`
+  mutation removeWorkout($workoutId: ID!) {
+    removeWorkout(workoutId: $workoutId) {
+      _id
+    }
+  }
+`;
+
+

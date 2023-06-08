@@ -70,3 +70,13 @@ export const REMOVE_WORKOUT = gql`
 `;
 
 
+export const EDIT_WORKOUT = gql`
+mutation editWorkout($workoutId: ID!, $exercises: [String!], $workoutTitle: String!, $workoutText: String!) {
+  editWorkout(workoutId: $workoutId, exercises: $exercises, workoutTitle: $workoutTitle, workoutText: $workoutText) {
+    _id
+    exercises
+    workoutText
+    workoutTitle
+  }
+}
+`;

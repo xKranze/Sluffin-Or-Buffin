@@ -1019,15 +1019,19 @@ a:hover {
 .btn.btn-primary:hover {
   background-color: #57779a;
 }
-
+/* delete btn */
 .btn.btn-danger {
-  background-color: #e64c66;
-  color: #ffffff;
+  margin-left: 10px;
+  border-radius: 50px;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .btn.btn-danger:hover {
-  background-color: #ee8294;
+  transform: scale(1.1);
 }
+
+/* */
 
 .btn.btn-info {
   background-color: #20bf55;

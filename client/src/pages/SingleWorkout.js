@@ -130,9 +130,9 @@ const SingleWorkout = () => {
         </blockquote>
         <h3 className="p-5 display-inline-block" style={{ borderBottom: '1px dotted #1a1a1a' }}>
           Status:  {formatTime(stopClicked ? prevTimerDuration : timerDuration)}  <p> </p>
-          <button onClick={startTimer}> Start </button> 
-          <button onClick={stopTimer}> Stop </button> 
-          <button onClick={pauseTimer}> {isTimerPaused ? 'Resume' : 'Pause'} </button>
+          <button className="btn btn-info" onClick={startTimer}> Start </button> 
+          <button className="btn btn-dark" onClick={stopTimer}> Stop </button> 
+          <button className="btn btn-primary" onClick={pauseTimer}> {isTimerPaused ? 'Resume' : 'Pause'} </button>
         </h3>
         <div className="my-5">
           <ExerciseList exercises={workout.exercises} />

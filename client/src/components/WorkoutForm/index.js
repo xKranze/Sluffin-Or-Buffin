@@ -82,8 +82,8 @@ const WorkoutForm = () => {
   };
 
   return (
-    <div>
-      <h3>Start a new workout routine!</h3>
+    <div className='bg-primary text-light p-2 m-0'>
+      <h3 >Start a new workout routine!</h3>
       <br />
 
       {Auth.loggedIn() ? (

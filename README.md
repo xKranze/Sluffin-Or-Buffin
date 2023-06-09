@@ -54,8 +54,8 @@ Please view the link below to use the application:
 <a href="placeholder">Sluffin Or Buffin</a>
 
     
-![alt text](./lib/logogen.jpg)
-![alt text](./lib/passedtest.jpg)
+![alt text](./client/public/sluffinscreenshot.png)
+![alt text](./client/public/sluffin2.png)
 
 <hr>
 

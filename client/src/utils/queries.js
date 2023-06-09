@@ -50,8 +50,8 @@ export const QUERY_SINGLE_WORKOUT = gql`
 `;
 
 export const QUERY_ME = gql`
-  query data {
-    data {
+  query me {
+    me {
       _id
       username
       email

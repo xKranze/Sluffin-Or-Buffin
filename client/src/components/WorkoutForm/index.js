@@ -92,6 +92,8 @@ const WorkoutForm = () => {
             className="flex-row justify-center justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
           >
+            <div className="card-header bg-primary text-light p-2 m-0">
+            <div className="flex-row justify-center">
             <div className="col-12 col-lg-3">
               <h5>Title:</h5>
               <br />
@@ -157,6 +159,8 @@ const WorkoutForm = () => {
                 {error.message}
               </div>
             )}
+            </div>
+            </div>
           </form>
         </>
       ) : (

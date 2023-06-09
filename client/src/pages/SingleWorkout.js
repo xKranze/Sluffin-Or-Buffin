@@ -104,12 +104,18 @@ const SingleWorkout = () => {
   
   return (
     <div className="my-3">
-      <h3 className="card-header bg-dark text-light p-2 m-0">
-        {workout.workoutTitle} <br />
-        <span style={{ fontSize: '1rem' }}>
-          by {workout.workoutAuthor} on {workout.createdAt}
-        </span>
-      </h3>
+      <h3 className="card-header bg-dark text-light p-2 m-0" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+  <div>
+    <span>{workout.workoutTitle}</span>
+    <br></br>
+    <span style={{ fontSize: '1rem' }}>
+      by {workout.workoutAuthor} on {workout.createdAt}
+    </span>
+  </div>
+  <button className="btn btn-primary" onClick={handleEditWorkout}>Edit Workout</button>
+</h3>
+
+      
       <div className="bg-light py-4">
         <blockquote
           className="p-4"
@@ -133,7 +139,7 @@ const SingleWorkout = () => {
           
         </div>
       </div>
-      <button onClick={handleEditWorkout}>Edit Workout</button>
+      
 
       <div className="my-5">
         <CommentList comments={workout.comments} />

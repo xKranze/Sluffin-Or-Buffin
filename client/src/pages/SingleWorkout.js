@@ -104,12 +104,18 @@ const SingleWorkout = () => {
   
   return (
     <div className="my-3">
-      <h3 className="card-header bg-dark text-light p-2 m-0">
-        {workout.workoutTitle} <br />
-        <span style={{ fontSize: '1rem' }}>
-          by {workout.workoutAuthor} on {workout.createdAt}
-        </span>
-      </h3>
+      <h3 className="card-header bg-dark text-light p-2 m-0" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+  <div>
+    <span>{workout.workoutTitle}</span>
+    <br></br>
+    <span style={{ fontSize: '1rem' }}>
+      by {workout.workoutAuthor} on {workout.createdAt}
+    </span>
+  </div>
+  <button className="btn btn-primary" onClick={handleEditWorkout}>Edit Workout</button>
+</h3>
+
+      
       <div className="bg-light py-4">
         <blockquote
           className="p-4"
@@ -124,16 +130,16 @@ const SingleWorkout = () => {
         </blockquote>
         <h3 className="p-5 display-inline-block" style={{ borderBottom: '1px dotted #1a1a1a' }}>
           Status:  {formatTime(stopClicked ? prevTimerDuration : timerDuration)}  <p> </p>
-          <button onClick={startTimer}> Start </button> 
-          <button onClick={stopTimer}> Stop </button> 
-          <button onClick={pauseTimer}> {isTimerPaused ? 'Resume' : 'Pause'} </button>
+          <button className="btn btn-info" onClick={startTimer}> Start </button> 
+          <button className="btn btn-dark" onClick={stopTimer}> Stop </button> 
+          <button className="btn btn-primary" onClick={pauseTimer}> {isTimerPaused ? 'Resume' : 'Pause'} </button>
         </h3>
         <div className="my-5">
           <ExerciseList exercises={workout.exercises} />
           
         </div>
       </div>
-      <button onClick={handleEditWorkout}>Edit Workout</button>
+      
 
       <div className="my-5">
         <CommentList comments={workout.comments} />

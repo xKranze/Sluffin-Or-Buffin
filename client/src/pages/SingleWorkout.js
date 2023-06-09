@@ -5,6 +5,9 @@ import CommentList from '../components/CommentList';
 import CommentForm from '../components/CommentForm';
 import { QUERY_SINGLE_WORKOUT } from '../utils/queries';
 import ExerciseList from '../components/ExerciseList';
+import { useMutation } from '@apollo/client'
+import { EDIT_WORKOUT } from '../utils/mutations';
+
 
 const SingleWorkout = () => {
   const { workoutId } = useParams();
@@ -31,6 +34,8 @@ const SingleWorkout = () => {
       clearInterval(interval);
     };
   }, [isTimerRunning, isTimerPaused]);
+
+  const [editWorkout] = useMutation(EDIT_WORKOUT);
 
   const startTimer = () => {
     if (isTimerRunning || stopClicked) {
@@ -70,6 +75,31 @@ const SingleWorkout = () => {
   if (loading) {
     return <div>Loading...</div>;
   }
+  
+
+  const handleEditWorkout = async () => {
+    const newWorkoutTitle = prompt('Enter the new workout title:');
+    const newWorkoutText = prompt('Enter the new workout text:');
+    const newExercisesString = prompt('Enter the new exercises (separated by commas):');
+    const newExercises = newExercisesString.split(',').map((exercise) => exercise.trim());
+  
+    try {
+      const { data } = await editWorkout({
+        variables: {
+          workoutId: workout._id,
+          workoutTitle: newWorkoutTitle,
+          workoutText: newWorkoutText,
+          exercises: newExercises,
+        },
+      });
+      console.log('Workout edited:', data);
+      
+    } catch (error) {
+      console.error('Error editing workout:', error);
+      
+    }
+  };
+
 
   
   return (
@@ -103,6 +133,7 @@ const SingleWorkout = () => {
           
         </div>
       </div>
+      <button onClick={handleEditWorkout}>Edit Workout</button>
 
       <div className="my-5">
         <CommentList comments={workout.comments} />

@@ -52,7 +52,8 @@ const WorkoutForm = () => {
       setWorkoutText('');
       setWorkoutTitle('');
       setExercises([]);
-      window.location.assign('/my');
+      window.location.assign('/');
+      // window.location.assign('/my');
     } catch (err) {
       console.error(err);
     }

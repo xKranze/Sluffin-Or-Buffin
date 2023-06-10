@@ -41,23 +41,18 @@ const WorkoutForm = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(workoutTitle)
-    console.log(workoutText)
-    console.log(exercises)
     try {
       await addWorkout({
         variables: {
           workoutTitle,
           workoutText,
           exercises,
-        },
-
+        }
       });
-      console.log(exercises)
       setWorkoutText('');
       setWorkoutTitle('');
       setExercises([]);
-      window.location.reload();
+      window.location.assign('/my');
     } catch (err) {
       console.error(err);
     }

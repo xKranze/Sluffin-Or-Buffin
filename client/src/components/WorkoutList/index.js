@@ -18,7 +18,7 @@ const WorkoutList = ({
       await removeWorkout({
         variables: { workoutId }
       });
-      window.location.reload();
+      window.location.assign('/my');
     } catch (err) {
       console.error('Failed to delete workout:', err);
     }

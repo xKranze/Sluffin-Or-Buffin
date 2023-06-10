@@ -4,7 +4,7 @@
 
 ## Description 
 
--When you have created an account, this enables you to comment on others work out log in the news feed!
+-When you have created an account, this enables you to enter your stats, goals and comment on others work out log in the news feed!
 
 -Create your workouts that suits your goal!: 
 
@@ -23,7 +23,8 @@
 - [Usage](#usage)
 - [Credits](#credits)
 - [Features](#features)
-- [Tests](#tests)
+- [Collaborators](#collaborators)
+
 <hr>
 
 ## Installation
@@ -51,9 +52,9 @@ npm run seed
 npm run develop`
 
 
-Please view the link below to use the application:
+Please view the link below to use the deployed application:
 
-<a href="https://salty-spire-29612.herokuapp.com/https://salty-spire-29612.herokuapp.com/">Sluffin Or Buffin</a>
+<a href="https://salty-spire-29612.herokuapp.com/">Sluffin Or Buffin</a>
 
     
 ![alt text](./client/public/sluffinscreenshot.png)

@@ -51,7 +51,7 @@ npm run seed
 npm run develop`
 
 
-Please view the link below to use the application:
+Please view the link below to use the deployed application:
 
 <a href="https://salty-spire-29612.herokuapp.com/">Sluffin Or Buffin</a>
 

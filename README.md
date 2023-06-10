@@ -23,7 +23,8 @@
 - [Usage](#usage)
 - [Credits](#credits)
 - [Features](#features)
-- [Tests](#tests)
+- [Collaborators](#collaborators)
+
 <hr>
 
 ## Installation

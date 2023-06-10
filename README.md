@@ -53,7 +53,7 @@ npm run develop`
 
 Please view the link below to use the application:
 
-<a href="https://salty-spire-29612.herokuapp.com/https://salty-spire-29612.herokuapp.com/">Sluffin Or Buffin</a>
+<a href="https://salty-spire-29612.herokuapp.com/">Sluffin Or Buffin</a>
 
     
 ![alt text](./client/public/sluffinscreenshot.png)

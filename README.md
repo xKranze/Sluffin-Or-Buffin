@@ -4,6 +4,8 @@
 
 ## Description 
 
+-When you have created an account, this enables you to comment on others work out log in the news feed!
+
 -Create your workouts that suits your goal!: 
 
 -Authenticated users can create workout plans, such as choosing exercises, sets, reps, and weights amount.
@@ -12,7 +14,7 @@
 
 -View you workout history: Users can view their workout history, tracking thier progress over time.
 
--Possibility - Add your friends and compete to see whos sluffin or buffin!
+
 <hr>
 
 ## Table of Contents 
@@ -51,7 +53,7 @@ npm run develop`
 
 Please view the link below to use the application:
 
-<a href="placeholder">Sluffin Or Buffin</a>
+<a href="https://salty-spire-29612.herokuapp.com/https://salty-spire-29612.herokuapp.com/">Sluffin Or Buffin</a>
 
     
 ![alt text](./client/public/sluffinscreenshot.png)
@@ -78,7 +80,17 @@ Tutoring
 https://graphql.org/
 
 https://devcenter.heroku.com/
+<hr>
+
 ## Features
+
+-Add , edit, delete work outs in your profile.
+
+-Join the community of people working out like you.
+
+-Comment on others progress to motivate or give recognition on thier hard work!
+
+-Built in timer on your work out page.
 
 <hr>
 

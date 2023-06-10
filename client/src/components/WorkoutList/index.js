@@ -19,7 +19,6 @@ const WorkoutList = ({
         variables: { workoutId }
       });
       window.location.assign('/');
-      // window.location.assign('/my');
     } catch (err) {
       console.error('Failed to delete workout:', err);
     }

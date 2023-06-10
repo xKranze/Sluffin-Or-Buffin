@@ -47,13 +47,13 @@ const WorkoutForm = () => {
           workoutTitle,
           workoutText,
           exercises,
-        }
+        },
+
       });
       setWorkoutText('');
       setWorkoutTitle('');
       setExercises([]);
       window.location.assign('/');
-      // window.location.assign('/my');
     } catch (err) {
       console.error(err);
     }

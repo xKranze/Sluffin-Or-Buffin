@@ -6,6 +6,9 @@ export const QUERY_USER = gql`
       _id
       username
       email
+      height
+      weight
+      goals
       workouts {
         _id
         workoutTitle
@@ -55,6 +58,9 @@ export const QUERY_ME = gql`
       _id
       username
       email
+      height
+      weight
+      goals
       workouts {
         _id
         workoutTitle

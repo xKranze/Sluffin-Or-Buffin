@@ -54,6 +54,31 @@ const resolvers = {
   
       return { token, user };
     },
+    editUser: async (parent, { height, weight, goals }, context) => {
+      if (context.user) {
+        const updatedUser = await User.findOneAndUpdate({
+          _id: context.user._id
+        },
+        {
+          $set: {
+            height: height || '',
+            weight: weight || '',
+            goals: goals || "",
+          },
+        },
+        {
+          new: true,
+          runValidators: true,
+        }
+        );
+
+        if(!updatedUser) {
+          throw new Error('User not found!');
+        }
+        return updatedUser;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
     addWorkout: async (parent, { workoutTitle, workoutText, exercises }, context) => {
       if (!context.user) {
         throw new AuthenticationError('You need to be logged in!');

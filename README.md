@@ -4,7 +4,7 @@
 
 ## Description 
 
--When you have created an account, this enables you to comment on others work out log in the news feed!
+-When you have created an account, this enables you to enter your stats, goals and comment on others work out log in the news feed!
 
 -Create your workouts that suits your goal!: 
 

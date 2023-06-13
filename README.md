@@ -81,12 +81,12 @@ Tutoring
 https://graphql.org/
 
 https://devcenter.heroku.com/
-<hr>
 
 https://www.apollographql.com/docs/react/data/mutations/
 
 https://cloud.mongodb.com/
 
+<hr>
 ## Features
 
 -Add , edit, delete work outs in your profile.

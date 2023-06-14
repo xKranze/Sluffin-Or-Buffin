@@ -61,12 +61,14 @@ Please view the link below to use the deployed application:
 ![alt text](./client/public/sluffin2.png)
 
 <hr>
+
 ## Technologies Used
 
 React, NodeJS, MongoDb Atlas, GraphQL
 
 
 <hr>
+
 ## Credits
 
 Node.js - https://nodejs.org/en/
@@ -92,6 +94,7 @@ https://www.apollographql.com/docs/react/data/mutations/
 https://cloud.mongodb.com/
 
 <hr>
+
 ## Features
 
 -Add , edit, delete work outs in your profile.
